@@ -1,0 +1,20 @@
+name: manua-input-workflow
+on:
+ workflow_dispatch:
+    inputs:
+     name : 
+        description: 'Person to great'
+        default: 'world'
+        required: true
+   
+jobs:
+   great : 
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      - name : run one-line script
+        run : echo "hello {{github.event.inputs.name}}"
+
+     
+   
